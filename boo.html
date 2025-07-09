@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milden Adventures LTD - Terms & Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+       
+        .main-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 30px;
+            z-index: 10;
+        }
+        
+        .main-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+        
+        .main-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn80 {
+            padding: 16px 40px;
+            background: linear-gradient(to right, #1a2a6c, #2c3e9e);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn80:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #2c3e9e, #3d50c1);
+        }
+        
+        .btn80 i {
+            font-size: 1.4rem;
+        }
+        
+        /* Modal Overlay */
+        .modal-overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay2.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Modal Container */
+        .modal-container2 {
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            z-index: 1001; /* Above 1000 as requested */
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay2.active .modal-container2 {
+            transform: scale(1);
+        }
+        
+        .modal-header23 {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 36px;
+            color: #ffcc00;
+        }
+        
+        .modal-header23 h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header23 p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .close-btn23 {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn23:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .terms-content {
+            padding: 30px 40px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .section23 {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .section23:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+        }
+        
+        .section23 h2 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section23 h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 30px;
+            background: #b21f1f;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+        
+        .section23 p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background: #fff9e6;
+            border-left: 4px solid #ffcc00;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .modal-footer23 {
+            background: #f8f9fa;
+            padding: 25px 40px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .modal-footer23 h3 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .modal-footer23 p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .action-btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .accept-btn {
+            background: linear-gradient(to right, #1a2a6c, #2c3e9e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.3);
+        }
+        
+        .decline-btn {
+            background: white;
+            color: #b21f1f;
+            border: 2px solid #b21f1f;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .accept-btn:hover {
+            background: linear-gradient(to right, #2c3e9e, #3d50c1);
+        }
+        
+        .decline-btn:hover {
+            background: #f8f8f8;
+        }
+        
+        .scroll-indicator {
+            text-align: center;
+            padding: 10px;
+            color: #777;
+            font-size: 14px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .scroll-indicator i {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        
+        @media (max-width: 768px) {
+            .main-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-content p {
+                font-size: 1.1rem;
+            }
+            
+            .modal-container2 {
+                width: 95%;
+            }
+            
+            .modal-header23, .terms-content, .modal-footer23 {
+                padding: 20px;
+            }
+            
+            .modal-header23 h1 {
+                font-size: 24px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Milden Adventures LTD</h1>
+        <p>Your Journey, Our Commitment – Experience the world with confidence and peace of mind</p>
+        <button class="btn" id="termsBtn">
+            <i class="fas fa-file-contract"></i> View Terms & Conditions
+        </button>
+    </div>
+    
+    <!-- Modal Overlay -->
+    <div class="modal-overlay2" id="modalOverlay2">
+        <div class="modal-container2">
+            <div class="modal-header23">
+                
+                <h1>Terms & Conditions</h1>
+                <p>Milden Adventures LTD - Your Journey, Our Commitment – Transparent Travel Policies for Your Peace of Mind</p>
+                <button class="close-btn23" id="closeBtn23">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="terms-content">
+                <div class="section23">
+                    <h2>1. Booking and Confirmation</h2>
+                    <p>All bookings must be confirmed in writing via email or online reservation.</p>
+                    <p>A deposit (typically 30–50% of the total package cost) is required to secure your booking.</p>
+                    <p>Final payment must be made no later than 30 days before the departure date, unless otherwise agreed.</p>
+                    <p>Bookings made within 30 days of departure require full payment at the time of booking.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>2. Prices and Inclusions</h2>
+                    <p>Prices are quoted in USD (or local currency) and are subject to change due to currency fluctuations, government taxes, or supplier rate changes.</p>
+                    <p>Package inclusions (e.g., accommodation, meals, transport, activities) are clearly stated in your confirmed itinerary.</p>
+                    <p>Exclusions typically include international flights, visa fees, insurance, and personal expenses.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>3. Cancellation Policy</h2>
+                    <p>We understand that plans may change. Our cancellation terms are designed to be fair and flexible:</p>
+                    
+                    <div class="highlight">
+                        <h3>Client-Initiated Cancellations</h3>
+                        <p><strong>More than 45 days before travel:</strong> Full refund minus administrative fee (10%).</p>
+                        <p><strong>30–44 days before travel:</strong> 70% refund of the total package price.</p>
+                        <p><strong>15–29 days before travel:</strong> 50% refund.</p>
+                        <p><strong>Less than 14 days before travel:</strong> No refund due to supplier commitments.</p>
+                        
+                        <h3>No-Shows & Early Departures</h3>
+                        <p>No refunds are provided for no-shows or unused services after the tour begins.</p>
+                    </div>
+                </div>
+                
+                <div class="section23">
+                    <h2>4. Refunds</h2>
+                    <p>Refunds (where applicable) are processed within 14 business days of receiving written cancellation.</p>
+                    <p>Refunds are issued to the original method of payment.</p>
+                    <p>In some cases, suppliers (e.g., airlines, hotels) may apply their own refund rules, which we must follow.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>5. Changes by the Client</h2>
+                    <p>Any request to modify a confirmed itinerary (e.g., travel dates, accommodations) must be made in writing.</p>
+                    <p>We will do our best to accommodate changes, subject to availability and potential extra costs.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>6. Changes or Cancellations by Milden Adventures LTD</h2>
+                    <p>While we strive to operate all trips as planned, we reserve the right to make adjustments due to weather, safety, or unforeseen circumstances.</p>
+                    <p>In case of cancellation initiated by us, clients will be offered an alternative date, a credit note, or a full refund.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>7. Travel Insurance</h2>
+                    <p>Comprehensive travel insurance is strongly recommended to cover medical emergencies, trip cancellations, delays, and lost baggage.</p>
+                    <p>Milden Adventures LTD is not liable for any costs incurred due to lack of insurance coverage.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>8. Client Responsibilities</h2>
+                    <p>Clients are responsible for ensuring they have valid passports, visas, vaccinations, and necessary travel documents.</p>
+                    <p>It is the client’s responsibility to disclose any medical conditions, dietary needs, or mobility limitations in advance.</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>9. Liability Disclaimer</h2>
+                    <p>While we work with vetted and trusted suppliers, Milden Adventures LTD is not responsible for acts or omissions of third-party service providers.</p>
+                    <p>We are not liable for any loss, injury, delay, or damage caused by force majeure events (e.g., natural disasters, strikes, pandemics).</p>
+                </div>
+                
+                <div class="section23">
+                    <h2>10. Governing Law</h2>
+                    <p>These Terms and Conditions are governed by the laws of Kenya, and any disputes will be settled in its courts unless otherwise agreed.</p>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i> Scroll to read all terms
+            </div>
+            
+            <div class="modal-footer23">
+                <h3>Our Promise</h3>
+                <p>At Milden Adventures LTD, we are committed to providing clear, client-centered policies that protect your travel investment and prioritize your experience.</p>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Get DOM elements
+        const termsBtn = document.getElementById('termsBtn');
+        const closeBtn23 = document.getElementById('closeBtn23');
+        const modalOverlay2 = document.getElementById('modalOverlay2');
+        const acceptBtn = document.querySelector('.accept-btn');
+        const declineBtn = document.querySelector('.decline-btn');
+        
+        // Show modal when terms button is clicked
+        termsBtn.addEventListener('click', () => {
+            modalOverlay2.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+        
+        // Close modal when close button is clicked
+        closeBtn23.addEventListener('click', () => {
+            modalOverlay2.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Enable background scrolling
+        });
+        
+        // Close modal when overlay is clicked
+        modalOverlay2.addEventListener('click', (e) => {
+            if (e.target === modalOverlay2) {
+                modalOverlay2.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Handle accept button click
+        acceptBtn.addEventListener('click', () => {
+            alert('Thank you for accepting our Terms & Conditions!');
+            modalOverlay2.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Handle decline button click
+        declineBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to decline our Terms & Conditions?')) {
+                modalOverlay2.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal when pressing Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay2.classList.contains('active')) {
+                modalOverlay2.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
